@@ -24,7 +24,7 @@ const Profile = () => {
 
   const handleFollow = async() => {
     try {
-      const res = await axios.post(`http://localhost:8000/api/v1/user/${userProfile?._id}/${isFollowing ? "unfollow" : "follow"}`, { withCredentials: true });
+      const res = await axios.post(`https://social-18g1.onrender.com/api/v1/user/${userProfile?._id}/${isFollowing ? "unfollow" : "follow"}`, { withCredentials: true });
       if (res.data.success) {
         toast.success(res.data.message);
         dispatch(setAuthUser(res.data.user));
